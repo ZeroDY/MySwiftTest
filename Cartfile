@@ -1,0 +1,17 @@
+# github "Alamofire/Alamofire" ~> 4.7  # 网络
+github "Moya/Moya"   # 基于Alamofire的更高层网络请求封装抽象层
+github "ashleymills/Reachability.swift"   # 网络连接状况
+github "SnapKit/SnapKit" ~> 4.0.0   # 布局
+github "SwiftyJSON/SwiftyJSON" ~> 4.0   # JSON处理
+github "tristanhimmelman/ObjectMapper" ~> 3.4   # json对象映射为model对象。
+github "onevcat/Kingfisher" ~> 4.0   # 图片缓存
+github "eggswift/pull-to-refresh"  #  下拉刷新和加载更多
+github "pkluz/PKHUD" ~> 4.0   # HUD
+github "dennisweissmann/DeviceKit" ~> 1.3  # 设备、系统信息
+
+github "ninjaprox/NVActivityIndicatorView"  # 进度加载指示器
+github "nixzhu/MonkeyKing"  # 社会化分享框架
+github "radex/SwiftyUserDefaults" "4.0.0-alpha.1"    # 对NSUserDefaults的封装
+github "ephread/Instructions" ~> 1.2.0   # 应用于操作指南、新手教程
+github "IFTTT/RazzleDazzle"   #  集成引导页，具有不错的动画效果
+github "vikmeup/SCLAlertView-Swift" "master"   # AlertView
