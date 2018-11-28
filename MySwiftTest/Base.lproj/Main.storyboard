@@ -55,6 +55,13 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KtJ-Hl-OPc">
+                                <rect key="frame" x="0.0" y="562" width="414" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="W1n-b6-P85"/>
+                                    <constraint firstAttribute="width" constant="414" id="eAO-rc-hJV"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -62,6 +69,8 @@
                             <constraint firstItem="xJH-jr-GW0" firstAttribute="top" secondItem="bHe-5Q-XZb" secondAttribute="top" id="6JD-Yr-HGy"/>
                             <constraint firstItem="xJH-jr-GW0" firstAttribute="trailing" secondItem="bHe-5Q-XZb" secondAttribute="trailing" id="6i6-wA-u9j"/>
                             <constraint firstItem="xJH-jr-GW0" firstAttribute="bottom" secondItem="Q59-wY-8Hk" secondAttribute="bottom" id="ESe-le-EBz"/>
+                            <constraint firstItem="bHe-5Q-XZb" firstAttribute="bottom" secondItem="KtJ-Hl-OPc" secondAttribute="bottom" id="Jac-6T-SrX"/>
+                            <constraint firstItem="KtJ-Hl-OPc" firstAttribute="centerX" secondItem="xJH-jr-GW0" secondAttribute="centerX" id="Uyk-rO-fUg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bHe-5Q-XZb"/>
                     </view>
@@ -69,12 +78,13 @@
                         <barButtonItem key="backBarButtonItem" title="🔙" id="DM0-Vf-uH1"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageView" destination="KtJ-Hl-OPc" id="3KT-Cx-hQL"/>
                         <outlet property="tableView" destination="xJH-jr-GW0" id="mO4-BB-oZT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulE-eF-6z7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1415.9420289855072" y="241.07142857142856"/>
+            <point key="canvasLocation" x="1414.4927536231885" y="241.07142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O6h-hF-4JU">
