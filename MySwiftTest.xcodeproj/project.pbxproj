@@ -131,6 +131,7 @@
 		19E5E3CE21ABDB0900E4C3A6 = {
 			isa = PBXGroup;
 			children = (
+				19E5E4C021AD344800E4C3A6 /* Cartfile */,
 				19E5E3D921ABDB0900E4C3A6 /* MySwiftTest */,
 				19E5E3D821ABDB0900E4C3A6 /* Products */,
 				19E5E41821AD22B600E4C3A6 /* Frameworks */,
@@ -148,7 +149,6 @@
 		19E5E3D921ABDB0900E4C3A6 /* MySwiftTest */ = {
 			isa = PBXGroup;
 			children = (
-				19E5E4BF21AD2E1900E4C3A6 /* Resource */,
 				19E5E4BE21AD2DFF00E4C3A6 /* Utility */,
 				19E5E4BD21AD2D1800E4C3A6 /* Network */,
 				19E5E4BC21AD2D0000E4C3A6 /* ViewController */,
@@ -221,14 +221,6 @@
 				19E5E40B21ABE26200E4C3A6 /* Utility.swift */,
 			);
 			path = Utility;
-			sourceTree = "<group>";
-		};
-		19E5E4BF21AD2E1900E4C3A6 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				19E5E4C021AD344800E4C3A6 /* Cartfile */,
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
