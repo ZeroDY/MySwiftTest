@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1948465121AEE3CC006515BE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1948465021AEE3CC006515BE /* NetworkManager.swift */; };
+		1948465321AEE401006515BE /* MoyaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1948465221AEE401006515BE /* MoyaConfig.swift */; };
 		19D9E12221AE4E4E006592DA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12121AE4E4E006592DA /* Network.swift */; };
 		19D9E12421AE64C9006592DA /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12321AE64C9006592DA /* MyService.swift */; };
 		19D9E12721AE70A7006592DA /* AssetLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12621AE70A7006592DA /* AssetLoader.swift */; };
@@ -25,7 +27,6 @@
 		19E5E43721AD22B800E4C3A6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E5E41B21AD22B700E4C3A6 /* SwiftyJSON.framework */; };
 		19E5E43821AD22B800E4C3A6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E5E41C21AD22B700E4C3A6 /* RxCocoa.framework */; };
 		19E5E43921AD22B800E4C3A6 /* MonkeyKing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E5E41D21AD22B700E4C3A6 /* MonkeyKing.framework */; };
-		19E5E43A21AD22B800E4C3A6 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E5E41E21AD22B700E4C3A6 /* ToastSwiftFramework.framework */; };
 		19E5E43B21AD22B800E4C3A6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E5E41F21AD22B700E4C3A6 /* Alamofire.framework */; };
 		19E5E43C21AD22B800E4C3A6 /* Instructions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E5E42021AD22B700E4C3A6 /* Instructions.framework */; };
 		19E5E43D21AD22B800E4C3A6 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E5E42121AD22B700E4C3A6 /* Kingfisher.framework */; };
@@ -52,6 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1948465021AEE3CC006515BE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1948465221AEE401006515BE /* MoyaConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaConfig.swift; sourceTree = "<group>"; };
 		19D9E12121AE4E4E006592DA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		19D9E12321AE64C9006592DA /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
 		19D9E12621AE70A7006592DA /* AssetLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetLoader.swift; sourceTree = "<group>"; };
@@ -73,7 +76,6 @@
 		19E5E41B21AD22B700E4C3A6 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		19E5E41C21AD22B700E4C3A6 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		19E5E41D21AD22B700E4C3A6 /* MonkeyKing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MonkeyKing.framework; path = Carthage/Build/iOS/MonkeyKing.framework; sourceTree = "<group>"; };
-		19E5E41E21AD22B700E4C3A6 /* ToastSwiftFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToastSwiftFramework.framework; path = Carthage/Build/iOS/ToastSwiftFramework.framework; sourceTree = "<group>"; };
 		19E5E41F21AD22B700E4C3A6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		19E5E42021AD22B700E4C3A6 /* Instructions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Instructions.framework; path = Carthage/Build/iOS/Instructions.framework; sourceTree = "<group>"; };
 		19E5E42121AD22B700E4C3A6 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -110,7 +112,6 @@
 				19E5E43721AD22B800E4C3A6 /* SwiftyJSON.framework in Frameworks */,
 				19E5E43821AD22B800E4C3A6 /* RxCocoa.framework in Frameworks */,
 				19E5E43921AD22B800E4C3A6 /* MonkeyKing.framework in Frameworks */,
-				19E5E43A21AD22B800E4C3A6 /* ToastSwiftFramework.framework in Frameworks */,
 				19E5E43B21AD22B800E4C3A6 /* Alamofire.framework in Frameworks */,
 				19E5E43C21AD22B800E4C3A6 /* Instructions.framework in Frameworks */,
 				19E5E43D21AD22B800E4C3A6 /* Kingfisher.framework in Frameworks */,
@@ -142,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				19D9E12C21AE865F006592DA /* API.swift */,
+				1948465021AEE3CC006515BE /* NetworkManager.swift */,
+				1948465221AEE401006515BE /* MoyaConfig.swift */,
 			);
 			path = Moya;
 			sourceTree = "<group>";
@@ -210,7 +213,6 @@
 				19E5E42C21AD22B800E4C3A6 /* SnapKit.framework */,
 				19E5E41B21AD22B700E4C3A6 /* SwiftyJSON.framework */,
 				19E5E42A21AD22B800E4C3A6 /* SwiftyUserDefaults.framework */,
-				19E5E41E21AD22B700E4C3A6 /* ToastSwiftFramework.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,7 +352,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUserDefaults.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ToastSwiftFramework.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -367,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1948465121AEE3CC006515BE /* NetworkManager.swift in Sources */,
 				19D9E12D21AE865F006592DA /* API.swift in Sources */,
 				19D9E12721AE70A7006592DA /* AssetLoader.swift in Sources */,
 				19E5E40C21ABE26200E4C3A6 /* Utility.swift in Sources */,
@@ -374,6 +376,7 @@
 				19E5E41521AD221300E4C3A6 /* DoubanViewController.swift in Sources */,
 				19E5E4C321AD4C6000E4C3A6 /* HttpbinAPI.swift in Sources */,
 				19D9E12921AE763A006592DA /* RequestAlertPlugin.swift in Sources */,
+				1948465321AEE401006515BE /* MoyaConfig.swift in Sources */,
 				19E5E41121AD20AC00E4C3A6 /* DoubanAPI.swift in Sources */,
 				19E5E3DD21ABDB0900E4C3A6 /* ViewController.swift in Sources */,
 				19D9E12221AE4E4E006592DA /* Network.swift in Sources */,

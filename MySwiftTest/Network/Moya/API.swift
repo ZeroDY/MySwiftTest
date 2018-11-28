@@ -13,20 +13,23 @@ enum API {
     case testApi
     case testApiPara(para1:String, para2:String)
     case testApiDict(dict:[String:Any])
+    case uploadImage(parameters: [String:Any],imageDate:Data)
 }
 
 extension API:TargetType{
     //baseURL 也可以用枚举来区分不同的baseURL，不过一般也只有一个BaseURL
     var baseURL: URL {
-//        return URL.init(string: "http://news-at.zhihu.com/api/")!
-        switch self {
-        case .testApi:
-            return URL.init(string: "http://news-at.zhihu.com/api/")!
-        case .testApiPara:
-            return URL.init(string: "http://news-at.zhihu.com/api/")!
-        case .testApiDict:
-            return URL.init(string: "http://news-at.zhihu.com/api/")!
-        }
+        return URL.init(string: "http://news-at.zhihu.com/api/")!
+//        switch self {
+//        case .testApi:
+//            return URL.init(string: "http://news-at.zhihu.com/api/")!
+//        case .testApiPara:
+//            return URL.init(string: "http://news-at.zhihu.com/api/")!
+//        case .testApiDict:
+//            return URL.init(string: "http://news-at.zhihu.com/api/")!
+//        case .uploadImage:
+//            return URL.init(string: "http://news-at.zhihu.com/api/")!
+//        }
     }
     
     var path: String {
@@ -37,6 +40,8 @@ extension API:TargetType{
             return "\(para1)/news/latest"
         case .testApiDict:
             return "4/news/latest"
+        case .uploadImage:
+            return "/file/user/upload.jhtml"
 //        default:
 //            return "4/news/latest"
         }
@@ -65,6 +70,11 @@ extension API:TargetType{
         case let .testApiDict(dict)://所有参数当一个字典进来完事。
             //后台可以接收json字符串做参数时选这个
             return .requestParameters(parameters: dict, encoding: JSONEncoding.default)
+        case let .uploadImage(parameters, imageDate):
+            ///name 和fileName 看后台怎么说，   mineType根据文件类型上百度查对应的mineType
+            let formData = MultipartFormData(provider: .data(imageDate), name: "file",
+                                             fileName: "hangge.png", mimeType: "image/png")
+            return .uploadCompositeMultipart([formData], urlParameters: parameters)
         }
     }
     

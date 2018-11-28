@@ -27,6 +27,14 @@ class ViewController: UIViewController {
         dPrint(returnFifteen())
         dPrint(sumOf(numbers: 42, 597, 12))
         
+        NetWorkRequest(.testApiDict(dict: Dictionary()), completion: { (response) -> (Void) in
+            
+        }, failed: { (error) -> (Void) in
+            
+        }) { () -> (Void) in
+            
+        }
+        
     }
 
     func greet(person: String, day: String) -> String {
