@@ -11,6 +11,7 @@
 		19D9E12421AE64C9006592DA /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12321AE64C9006592DA /* MyService.swift */; };
 		19D9E12721AE70A7006592DA /* AssetLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12621AE70A7006592DA /* AssetLoader.swift */; };
 		19D9E12921AE763A006592DA /* RequestAlertPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12821AE763A006592DA /* RequestAlertPlugin.swift */; };
+		19D9E12D21AE865F006592DA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12C21AE865F006592DA /* API.swift */; };
 		19E5E3DB21ABDB0900E4C3A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E5E3DA21ABDB0900E4C3A6 /* AppDelegate.swift */; };
 		19E5E3DD21ABDB0900E4C3A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E5E3DC21ABDB0900E4C3A6 /* ViewController.swift */; };
 		19E5E3E021ABDB0900E4C3A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E5E3DE21ABDB0900E4C3A6 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		19D9E12321AE64C9006592DA /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
 		19D9E12621AE70A7006592DA /* AssetLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetLoader.swift; sourceTree = "<group>"; };
 		19D9E12821AE763A006592DA /* RequestAlertPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAlertPlugin.swift; sourceTree = "<group>"; };
+		19D9E12C21AE865F006592DA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		19E5E3D721ABDB0900E4C3A6 /* MySwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E5E3DA21ABDB0900E4C3A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19E5E3DC21ABDB0900E4C3A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19D9E12B21AE864E006592DA /* Moya */ = {
+			isa = PBXGroup;
+			children = (
+				19D9E12C21AE865F006592DA /* API.swift */,
+			);
+			path = Moya;
+			sourceTree = "<group>";
+		};
 		19E5E3CE21ABDB0900E4C3A6 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +227,7 @@
 		19E5E4BD21AD2D1800E4C3A6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				19D9E12B21AE864E006592DA /* Moya */,
 				19E5E41021AD20AC00E4C3A6 /* DoubanAPI.swift */,
 				19E5E4C221AD4C6000E4C3A6 /* HttpbinAPI.swift */,
 				19D9E12121AE4E4E006592DA /* Network.swift */,
@@ -364,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19D9E12D21AE865F006592DA /* API.swift in Sources */,
 				19D9E12721AE70A7006592DA /* AssetLoader.swift in Sources */,
 				19E5E40C21ABE26200E4C3A6 /* Utility.swift in Sources */,
 				19D9E12421AE64C9006592DA /* MyService.swift in Sources */,
