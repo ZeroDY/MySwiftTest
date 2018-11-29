@@ -28,16 +28,20 @@ class ViewController: RootViewController {
         dPrint(returnFifteen())
         dPrint(sumOf(numbers: 42, 597, 12))
         
-        NetWorkRequest(.testApiDict(dict: Dictionary()), completion: { (response) -> (Void) in
-            
-        }, failed: { (error) -> (Void) in
-            
-        }) { () -> (Void) in
-            
-        }
+        
+
         
     }
-
+    @IBAction func testAction(_ sender: Any) {
+        
+        NetworkRequest(.testApiDict(dict: ["String" : "Any"]), success: { (result) -> (Void) in
+            dPrint(result)
+        }) { (errorCode) -> (Void) in
+            SwiftNotice.noticeOnStatusBar("产生错误 ：\(errorCode)", autoClear: true, autoClearTime: 3)
+        }
+    }
+    
+    
     func greet(person: String, day: String) -> String {
         return "Hello \(person), today is \(day)."
     }

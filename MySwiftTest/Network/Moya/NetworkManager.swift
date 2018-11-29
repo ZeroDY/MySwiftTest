@@ -14,11 +14,11 @@ import SwiftyJSON
 /// 超时时长
 private var requestTimeOut:Double = 30
 /// 成功数据的回调
-typealias successCallback = ((String) -> (Void))
+typealias successBlock = ((JSON) -> (Void))
 /// 失败的回调
-typealias failedCallback = ((String) -> (Void))
-/// 网络错误的回调
-typealias errorCallback = (() -> (Void))
+typealias failureBlock = ((MoyaError) -> (Void))
+/// 错误的回调
+typealias errorBlock = ((Int) -> (Void))
 
 
 /// Endpoint 基本设置, 具体到哪个网络请求，做一些设置
@@ -79,9 +79,9 @@ private let requestClosure = { (endpoint: Endpoint, done: MoyaProvider.RequestRe
         request.httpShouldHandleCookies = false
         // 打印请求参数
         if let requestData = request.httpBody {
-            print("\(request.url!)"+"\n"+"\(request.httpMethod ?? "")"+"发送参数"+"\(String(data: request.httpBody!, encoding: String.Encoding.utf8) ?? "")")
+            dPrint("🔵【\(request.httpMethod ?? "")】 ⇨ \(request.url!)  ===>\n\(JSON(requestData))")
         }else{
-            print("\(request.url!)"+"\(String(describing: request.httpMethod))")
+            dPrint("🔵【\(request.httpMethod ?? "")】 ⇨ \(request.url!) ")
         }
         done(.success(request))
     } catch {
@@ -118,19 +118,19 @@ private let requestClosure = { (endpoint: Endpoint, done: MoyaProvider.RequestRe
 
 
 /// NetworkActivityPlugin插件用来监听网络请求，界面上做相应的展示
-///但这里我没怎么用这个。。。 loading的逻辑直接放在网络处理里面了
-private let networkPlugin = NetworkActivityPlugin.init { (changeType, targetType) in
-    
-    print("networkPlugin \(changeType)")
-    //targetType 是当前请求的基本信息
-    switch(changeType){
-    case .began:
-        print("开始请求网络")
-        
-    case .ended:
-        print("结束")
-    }
-}
+//private let networkPlugin = NetworkActivityPlugin.init { (changeType, targetType) in
+//
+//    dPrint("networkPlugin \(changeType) -- \(targetType)")
+//    //targetType 是当前请求的基本信息
+//    switch(changeType){
+//    case .began:
+//        dPrint("开始请求网络")
+//
+//    case .ended:
+//        dPrint("结束")
+//    }
+//}
+
 
 // https://github.com/Moya/Moya/blob/master/docs/Providers.md  参数使用说明
 // stubClosure   用来延时发送网络请求
@@ -138,16 +138,16 @@ private let networkPlugin = NetworkActivityPlugin.init { (changeType, targetType
 
 /// Provider
 /// 网络请求发送的核心初始化方法，创建网络请求对象
-let Provider = MoyaProvider<API>(endpointClosure: endpointClosure, requestClosure: requestClosure, plugins: [networkPlugin], trackInflights: false)
-
+let Provider = MoyaProvider<API>(endpointClosure: endpointClosure, requestClosure: requestClosure, plugins:[RequestActivityPlugin(view: kAPPKeyWindow!)], trackInflights: false)
 
 /// 最常用的网络请求，只需知道正确的结果无需其他操作时候用这个
 ///
 /// - Parameters:
 ///   - target: 网络请求
-///   - completion: 请求成功的回调
-func NetWorkRequest(_ target: API, completion: @escaping successCallback ){
-    NetWorkRequest(target, completion: completion, failed: nil, errorResult: nil)
+///   - success: 请求成功的回调
+func NetworkRequest(_ target: API,
+                    success successCallback: @escaping successBlock){
+    NetworkRequest(target, success: successCallback, error: nil, failure: nil)
 }
 
 
@@ -155,10 +155,12 @@ func NetWorkRequest(_ target: API, completion: @escaping successCallback ){
 ///
 /// - Parameters:
 ///   - target: 网络请求
-///   - completion: 成功的回调
-///   - failed: 请求失败的回调
-func NetWorkRequest(_ target: API, completion: @escaping successCallback , failed:failedCallback?) {
-    NetWorkRequest(target, completion: completion, failed: failed, errorResult: nil)
+///   - success: 成功的回调
+///   - error: 报错回调
+func NetworkRequest(_ target: API,
+                    success successCallback: @escaping successBlock,
+                    error errorCallback: errorBlock?) {
+    NetworkRequest(target, success: successCallback, error: errorCallback, failure: nil)
 }
 
 
@@ -166,48 +168,44 @@ func NetWorkRequest(_ target: API, completion: @escaping successCallback , faile
 ///
 /// - Parameters:
 ///   - target: 网络请求
-///   - completion: 成功
-///   - failed: 失败
-///   - error: 错误
-func NetWorkRequest(_ target: API, completion: @escaping successCallback , failed:failedCallback?, errorResult:errorCallback?) {
-    //先判断网络是否有链接 没有的话直接返回--代码略
+///   - success: 成功的回调
+///   - error: 报错回调
+///   - failed: 请求失败
+func NetworkRequest(_ target: API,
+                    success successCallback: @escaping successBlock,
+                    error errorCallback: errorBlock?,
+                    failure failureCallback: failureBlock?) {
+    
     if !GlobalNetworkMonitor.sharedInstance.isReachable{
-        dPrint("提示用户网络似乎出现了问题")
+        SwiftNotice.showNoticeWithText(.error, text: "网络似乎出现了问题", autoClear: true, autoClearTime: 1.5)
         return
     }
-    //这里显示loading图
+    
     Provider.request(target) { (result) in
-        //隐藏hud
         switch result {
         case let .success(response):
             do {
-                let jsonData = try JSON(data: response.data)
-                print(jsonData)
-                //               这里的completion和failed判断条件依据不同项目来做，为演示demo我把判断条件注释了，直接返回completion。
-                
-                completion(String(data: response.data, encoding: String.Encoding.utf8)!)
-                
-                print("flag不为1000 HUD显示后台返回message"+"\(jsonData[RESULT_MESSAGE].stringValue)")
-                
-                //                if jsonData[RESULT_CODE].stringValue == "1000"{
-                //                    completion(String(data: response.data, encoding: String.Encoding.utf8)!)
-                //                }else{
-                //                if failed != nil{
-                //                    failed(String(data: response.data, encoding: String.Encoding.utf8)!)
-                //                }
-                //                }
-                
-            } catch {
+                // 如果数据返回成功则直接将结果转为JSON
+                // try response.filterSuccessfulStatusCodes()
+                let json = try JSON(response.mapJSON())
+                dPrint("✅  \(URL(target: target))  ===>  \n\(json)")
+                successCallback(json)
+            }
+            catch let error {
+                // 如果数据获取失败，则返回错误状态码
+                dPrint("⭕️  \(URL(target: target))  \n ==> \(error)")
+                guard let errorCallback = errorCallback else {
+                    break
+                }
+                errorCallback((error as! MoyaError).response!.statusCode)
             }
         case let .failure(error):
-            guard (error as? CustomStringConvertible) != nil else {
-                //网络连接失败，提示用户
-                print("网络连接失败")
+            dPrint("❌  \(URL(target: target))  \n ==> \(error)")
+            //如果连接异常，则返沪错误信息（必要时还可以将尝试重新发起请求）
+            guard let failureCallback = failureCallback else{
                 break
             }
-            if errorResult != nil {
-                errorResult!()
-            }
+            failureCallback(error)
         }
     }
     

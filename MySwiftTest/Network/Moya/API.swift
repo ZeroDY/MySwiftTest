@@ -13,7 +13,7 @@ enum API {
     case testApi
     case testApiPara(para1:String, para2:String)
     case testApiDict(dict:[String:Any])
-    case uploadImage(parameters: [String:Any],imageDate:Data)
+    case uploadImage(parameters: [String:Any], imageDate:Data)
 }
 
 extension API:TargetType{
@@ -81,6 +81,16 @@ extension API:TargetType{
     var headers: [String : String]? {
         //同task，具体选择看后台 有application/x-www-form-urlencoded 、application/json
         return ["Content-Type":"application/x-www-form-urlencoded"]
+    }
+    
+    
+    var showActivityPlugin: Bool {
+        switch self {
+        case .testApiDict:
+            return true
+        default:
+            return false
+        }
     }
     
     
