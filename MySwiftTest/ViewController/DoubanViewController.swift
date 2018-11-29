@@ -13,7 +13,7 @@ import ESPullToRefresh
 import SnapKit
 import Moya
 
-class DoubanViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DoubanViewController: RootViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
@@ -27,6 +27,7 @@ class DoubanViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.customUI()
         self.requestListData()
+
     }
     
     
@@ -46,7 +47,11 @@ class DoubanViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView!.register(UITableViewCell.self, forCellReuseIdentifier: "SwiftCell")
         self.tableView!.tableFooterView = UIView()
         
-        self.tableView.contentInsetAdjustmentBehavior = .always
+        if #available(iOS 11.0, *) {
+            self.tableView.contentInsetAdjustmentBehavior = .always
+        } else {
+            // Fallback on earlier versions
+        }
         self.tableView!.es.addPullToRefresh {
             [unowned self] in
             /// Do anything you want...

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Reachability
 
-class ViewController: UIViewController {
+class ViewController: RootViewController {
 
     let val = 8000.999
     
