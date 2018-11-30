@@ -59,7 +59,7 @@ private let endpointClosure = { (target: API) -> Endpoint in
     switch target {
     case .testApiDict:
         requestTimeOut = 20
-    case .testApi:
+    case .version:
         requestTimeOut = 5
     default:
         break
@@ -187,6 +187,8 @@ func NetworkRequest(_ target: API,
             do {
                 // 如果数据返回成功则直接将结果转为JSON
                 // try response.filterSuccessfulStatusCodes()
+//                let json = try response.mapJSON()
+                
                 let json = try JSON(response.mapJSON())
                 dPrint("✅✅✅ \(URL(target: target))  \n\(json)")
                 successCallback(json)

@@ -34,7 +34,7 @@ class ViewController: RootViewController {
     }
     @IBAction func testAction(_ sender: Any) {
         
-        NetworkRequest(.testApi, success: { (result) -> (Void) in
+        NetworkRequest(.version(version: "2.5.0"), success: { (result) -> (Void) in
             dPrint(result)
         }) { (errorCode) -> (Void) in
             SwiftNotice.noticeOnStatusBar("产生错误 ：\(errorCode)", autoClear: true, autoClearTime: 2)

@@ -10,8 +10,12 @@ import Foundation
 import Moya
 
 enum API {
-    case testApi
-    case testApiPara(para1:String, para2:String)
+    case version(version: String)      /** 软件版本查询*/
+    case newsLatest     /** 最新消息*/
+    case newsDetail(newsId: String)     /** 消息内容获取与离线下载*/
+    case newsBefore(date: String)     /** 过往消息*/
+    case newsExtra(newsId: String)     /**  新闻额外信息*/
+    
     case testApiDict(dict:[String:Any])
     case uploadImage(parameters: [String:Any], imageDate:Data)
 }
@@ -19,54 +23,53 @@ enum API {
 extension API:TargetType{
     //baseURL 也可以用枚举来区分不同的baseURL，不过一般也只有一个BaseURL
     var baseURL: URL {
-        return URL.init(string: "http://news-at.zhihu.com/api/")!
-//        switch self {
-//        case .testApi:
-//            return URL.init(string: "http://news-at.zhihu.com/api/")!
-//        case .testApiPara:
-//            return URL.init(string: "http://news-at.zhihu.com/api/")!
-//        case .testApiDict:
-//            return URL.init(string: "http://news-at.zhihu.com/api/")!
-//        case .uploadImage:
-//            return URL.init(string: "http://news-at.zhihu.com/api/")!
-//        }
+        return URL.init(string: "https://news-at.zhihu.com/api/")!
     }
+    
     
     var path: String {
         switch self {
-        case .testApi:
+        case .version(let v):
+            return "4/version/ios/\(v)"
+            
+        case .newsLatest:
             return "4/news/latest"
-        case let .testApiPara(para1, _):
-            return "\(para1)/news/latest"
+            
+        case .newsDetail(let newsId):
+            return "4/news/\(newsId)"
+            
+        case .newsBefore(let date):
+            return "4/news/before/\(date)"
+            
+        case .newsExtra(let newsId):
+            return "4/story-extra/\(newsId)"
+        
         case .testApiDict:
             return "4/news/latest"
         case .uploadImage:
             return "/file/user/upload.jhtml"
-//        default:
-//            return "4/news/latest"
         }
     }
     
+        
     var method: Moya.Method {
-        switch self {
-        case .testApi:
-            return .get
-        default:
-            return .post
-        }
+        return .get
     }
     
+        
     var sampleData: Data {
         return "{}".data(using: String.Encoding.utf8)!
     }
     
+        
     var task: Task {
         switch self {
-        case .testApi:
+        case .version, .newsLatest, .newsDetail, .newsBefore, .newsExtra:
             return .requestPlain
-        case let .testApiPara(para1, _)://这里的缺点就是多个参数会导致parameters拼接过长
-            //后台的content-Type 为application/x-www-form-urlencoded时选择URLEncoding
-            return .requestParameters(parameters: ["key":para1], encoding: URLEncoding.default)
+//        case let .newsLatest(para1, _):
+//            //这里的缺点就是多个参数会导致parameters拼接过长
+//            //后台的content-Type 为application/x-www-form-urlencoded时选择URLEncoding
+//            return .requestParameters(parameters: ["key":para1], encoding: URLEncoding.default)
         case let .testApiDict(dict)://所有参数当一个字典进来完事。
             //后台可以接收json字符串做参数时选这个
             return .requestParameters(parameters: dict, encoding: JSONEncoding.default)

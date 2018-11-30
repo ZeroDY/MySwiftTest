@@ -8,6 +8,7 @@ github "onevcat/Kingfisher" ~> 4.0   # 图片缓存
 github "eggswift/pull-to-refresh"  #  下拉刷新和加载更多
 github "pkluz/PKHUD" ~> 4.0   # HUD
 github "dennisweissmann/DeviceKit" ~> 1.3  # 设备、系统信息
+github "alibaba/HandyJSON" ~> 4.2.0
 
 github "ninjaprox/NVActivityIndicatorView"  # 进度加载指示器
 github "nixzhu/MonkeyKing"  # 社会化分享框架

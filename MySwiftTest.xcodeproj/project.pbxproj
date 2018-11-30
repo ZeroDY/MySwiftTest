@@ -20,6 +20,9 @@
 		19D9E13B21AFCB75006592DA /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E13A21AFCB75006592DA /* UIAlertExtension.swift */; };
 		19D9E13D21AFE7EF006592DA /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E13C21AFE7EF006592DA /* SwiftNotice.swift */; };
 		19D9E14121B0CE0A006592DA /* RequestActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E14021B0CE0A006592DA /* RequestActivityPlugin.swift */; };
+		19D9E14521B10971006592DA /* ZhihuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E14421B10971006592DA /* ZhihuViewController.swift */; };
+		19D9E14721B10C5D006592DA /* ZhiHuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E14621B10C5D006592DA /* ZhiHuModel.swift */; };
+		19D9E14A21B1297C006592DA /* HandyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D9E14921B1297C006592DA /* HandyJSON.framework */; };
 		19E5E3DB21ABDB0900E4C3A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E5E3DA21ABDB0900E4C3A6 /* AppDelegate.swift */; };
 		19E5E3DD21ABDB0900E4C3A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E5E3DC21ABDB0900E4C3A6 /* ViewController.swift */; };
 		19E5E3E021ABDB0900E4C3A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E5E3DE21ABDB0900E4C3A6 /* Main.storyboard */; };
@@ -72,6 +75,9 @@
 		19D9E13A21AFCB75006592DA /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 		19D9E13C21AFE7EF006592DA /* SwiftNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		19D9E14021B0CE0A006592DA /* RequestActivityPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestActivityPlugin.swift; sourceTree = "<group>"; };
+		19D9E14421B10971006592DA /* ZhihuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhihuViewController.swift; sourceTree = "<group>"; };
+		19D9E14621B10C5D006592DA /* ZhiHuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhiHuModel.swift; sourceTree = "<group>"; };
+		19D9E14921B1297C006592DA /* HandyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandyJSON.framework; path = Carthage/Build/iOS/HandyJSON.framework; sourceTree = "<group>"; };
 		19E5E3D721ABDB0900E4C3A6 /* MySwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E5E3DA21ABDB0900E4C3A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19E5E3DC21ABDB0900E4C3A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 				19E5E44E21AD22B900E4C3A6 /* ObjectMapper.framework in Frameworks */,
 				19E5E44F21AD22B900E4C3A6 /* Moya.framework in Frameworks */,
 				19E5E45021AD22B900E4C3A6 /* NVActivityIndicatorViewAppExtension.framework in Frameworks */,
+				19D9E14A21B1297C006592DA /* HandyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +198,7 @@
 		19E5E3D921ABDB0900E4C3A6 /* MySwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				19D9E14621B10C5D006592DA /* ZhiHuModel.swift */,
 				19E5E4BE21AD2DFF00E4C3A6 /* Utility */,
 				19E5E4BD21AD2D1800E4C3A6 /* Network */,
 				19E5E4BC21AD2D0000E4C3A6 /* ViewController */,
@@ -206,6 +214,7 @@
 		19E5E41821AD22B600E4C3A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19D9E14921B1297C006592DA /* HandyJSON.framework */,
 				19E5E41F21AD22B700E4C3A6 /* Alamofire.framework */,
 				19E5E42B21AD22B800E4C3A6 /* DeviceKit.framework */,
 				19E5E42321AD22B700E4C3A6 /* ESPullToRefresh.framework */,
@@ -240,9 +249,10 @@
 		19E5E4BC21AD2D0000E4C3A6 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				19D9E13821AFCA99006592DA /* RootViewController.swift */,
 				19E5E3DC21ABDB0900E4C3A6 /* ViewController.swift */,
 				19E5E41421AD221300E4C3A6 /* DoubanViewController.swift */,
-				19D9E13821AFCA99006592DA /* RootViewController.swift */,
+				19D9E14421B10971006592DA /* ZhihuViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -376,6 +386,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUserDefaults.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/HandyJSON.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -405,12 +416,14 @@
 				19E5E41121AD20AC00E4C3A6 /* DoubanAPI.swift in Sources */,
 				19D9E13421AFC08F006592DA /* UIColorExtension.swift in Sources */,
 				19D9E13121AFB28E006592DA /* GlobalTool.swift in Sources */,
+				19D9E14721B10C5D006592DA /* ZhiHuModel.swift in Sources */,
 				19E5E3DD21ABDB0900E4C3A6 /* ViewController.swift in Sources */,
 				19D9E12221AE4E4E006592DA /* Network.swift in Sources */,
 				19D9E13B21AFCB75006592DA /* UIAlertExtension.swift in Sources */,
 				19D9E13D21AFE7EF006592DA /* SwiftNotice.swift in Sources */,
 				19E5E3DB21ABDB0900E4C3A6 /* AppDelegate.swift in Sources */,
 				19D9E14121B0CE0A006592DA /* RequestActivityPlugin.swift in Sources */,
+				19D9E14521B10971006592DA /* ZhihuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
