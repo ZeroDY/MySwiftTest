@@ -79,9 +79,9 @@ private let requestClosure = { (endpoint: Endpoint, done: MoyaProvider.RequestRe
         request.httpShouldHandleCookies = false
         // 打印请求参数
         if let requestData = request.httpBody {
-            dPrint("🔵【\(request.httpMethod ?? "")】 ⇨ \(request.url!)  ===>\n\(JSON(requestData))")
+            dPrint("✏️✏️✏️【\(request.httpMethod ?? "")】 ⇨ \(request.url!) \n\(JSON(requestData))")
         }else{
-            dPrint("🔵【\(request.httpMethod ?? "")】 ⇨ \(request.url!) ")
+            dPrint("✏️✏️✏️【\(request.httpMethod ?? "")】 ⇨ \(request.url!) ")
         }
         done(.success(request))
     } catch {
@@ -188,19 +188,19 @@ func NetworkRequest(_ target: API,
                 // 如果数据返回成功则直接将结果转为JSON
                 // try response.filterSuccessfulStatusCodes()
                 let json = try JSON(response.mapJSON())
-                dPrint("✅  \(URL(target: target))  ===>  \n\(json)")
+                dPrint("✅✅✅ \(URL(target: target))  \n\(json)")
                 successCallback(json)
             }
             catch let error {
                 // 如果数据获取失败，则返回错误状态码
-                dPrint("⭕️  \(URL(target: target))  \n ==> \(error)")
+                dPrint("❗️❗️❗️ \(URL(target: target))  \n ===>>> \(error)")
                 guard let errorCallback = errorCallback else {
                     break
                 }
                 errorCallback((error as! MoyaError).response!.statusCode)
             }
         case let .failure(error):
-            dPrint("❌  \(URL(target: target))  \n ==> \(error)")
+            dPrint("❌❌❌ \(URL(target: target))  \n ===>>> \(error)")
             //如果连接异常，则返沪错误信息（必要时还可以将尝试重新发起请求）
             guard let failureCallback = failureCallback else{
                 break

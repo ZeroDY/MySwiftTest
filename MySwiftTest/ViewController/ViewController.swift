@@ -34,11 +34,17 @@ class ViewController: RootViewController {
     }
     @IBAction func testAction(_ sender: Any) {
         
-        NetworkRequest(.testApiDict(dict: ["String" : "Any"]), success: { (result) -> (Void) in
+        NetworkRequest(.testApi, success: { (result) -> (Void) in
             dPrint(result)
         }) { (errorCode) -> (Void) in
-            SwiftNotice.noticeOnStatusBar("产生错误 ：\(errorCode)", autoClear: true, autoClearTime: 3)
+            SwiftNotice.noticeOnStatusBar("产生错误 ：\(errorCode)", autoClear: true, autoClearTime: 2)
         }
+        
+//        NetworkRequest(.testApiDict(dict: ["String" : "Any"]), success: { (result) -> (Void) in
+//            dPrint(result)
+//        }) { (errorCode) -> (Void) in
+//            SwiftNotice.noticeOnStatusBar("产生错误 ：\(errorCode)", autoClear: true, autoClearTime: 2)
+//        }
     }
     
     

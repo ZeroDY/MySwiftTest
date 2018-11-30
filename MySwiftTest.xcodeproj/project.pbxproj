@@ -12,7 +12,6 @@
 		19D9E12221AE4E4E006592DA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12121AE4E4E006592DA /* Network.swift */; };
 		19D9E12421AE64C9006592DA /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12321AE64C9006592DA /* MyService.swift */; };
 		19D9E12721AE70A7006592DA /* AssetLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12621AE70A7006592DA /* AssetLoader.swift */; };
-		19D9E12921AE763A006592DA /* RequestAlertPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12821AE763A006592DA /* RequestAlertPlugin.swift */; };
 		19D9E12D21AE865F006592DA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12C21AE865F006592DA /* API.swift */; };
 		19D9E12F21AFA18D006592DA /* GlobalAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E12E21AFA18D006592DA /* GlobalAppStorage.swift */; };
 		19D9E13121AFB28E006592DA /* GlobalTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E13021AFB28E006592DA /* GlobalTool.swift */; };
@@ -20,6 +19,7 @@
 		19D9E13921AFCA99006592DA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E13821AFCA99006592DA /* RootViewController.swift */; };
 		19D9E13B21AFCB75006592DA /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E13A21AFCB75006592DA /* UIAlertExtension.swift */; };
 		19D9E13D21AFE7EF006592DA /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E13C21AFE7EF006592DA /* SwiftNotice.swift */; };
+		19D9E14121B0CE0A006592DA /* RequestActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9E14021B0CE0A006592DA /* RequestActivityPlugin.swift */; };
 		19E5E3DB21ABDB0900E4C3A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E5E3DA21ABDB0900E4C3A6 /* AppDelegate.swift */; };
 		19E5E3DD21ABDB0900E4C3A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E5E3DC21ABDB0900E4C3A6 /* ViewController.swift */; };
 		19E5E3E021ABDB0900E4C3A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E5E3DE21ABDB0900E4C3A6 /* Main.storyboard */; };
@@ -64,7 +64,6 @@
 		19D9E12121AE4E4E006592DA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		19D9E12321AE64C9006592DA /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
 		19D9E12621AE70A7006592DA /* AssetLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetLoader.swift; sourceTree = "<group>"; };
-		19D9E12821AE763A006592DA /* RequestAlertPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAlertPlugin.swift; sourceTree = "<group>"; };
 		19D9E12C21AE865F006592DA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		19D9E12E21AFA18D006592DA /* GlobalAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAppStorage.swift; sourceTree = "<group>"; };
 		19D9E13021AFB28E006592DA /* GlobalTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTool.swift; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		19D9E13821AFCA99006592DA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		19D9E13A21AFCB75006592DA /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 		19D9E13C21AFE7EF006592DA /* SwiftNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
+		19D9E14021B0CE0A006592DA /* RequestActivityPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestActivityPlugin.swift; sourceTree = "<group>"; };
 		19E5E3D721ABDB0900E4C3A6 /* MySwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E5E3DA21ABDB0900E4C3A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19E5E3DC21ABDB0900E4C3A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +156,7 @@
 				19D9E12C21AE865F006592DA /* API.swift */,
 				1948465021AEE3CC006515BE /* NetworkManager.swift */,
 				1948465221AEE401006515BE /* MoyaConfig.swift */,
+				19D9E14021B0CE0A006592DA /* RequestActivityPlugin.swift */,
 			);
 			path = Moya;
 			sourceTree = "<group>";
@@ -255,7 +256,6 @@
 				19D9E12121AE4E4E006592DA /* Network.swift */,
 				19D9E12321AE64C9006592DA /* MyService.swift */,
 				19D9E12621AE70A7006592DA /* AssetLoader.swift */,
-				19D9E12821AE763A006592DA /* RequestAlertPlugin.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -401,7 +401,6 @@
 				19E5E41521AD221300E4C3A6 /* DoubanViewController.swift in Sources */,
 				19D9E12F21AFA18D006592DA /* GlobalAppStorage.swift in Sources */,
 				19E5E4C321AD4C6000E4C3A6 /* HttpbinAPI.swift in Sources */,
-				19D9E12921AE763A006592DA /* RequestAlertPlugin.swift in Sources */,
 				1948465321AEE401006515BE /* MoyaConfig.swift in Sources */,
 				19E5E41121AD20AC00E4C3A6 /* DoubanAPI.swift in Sources */,
 				19D9E13421AFC08F006592DA /* UIColorExtension.swift in Sources */,
@@ -411,6 +410,7 @@
 				19D9E13B21AFCB75006592DA /* UIAlertExtension.swift in Sources */,
 				19D9E13D21AFE7EF006592DA /* SwiftNotice.swift in Sources */,
 				19E5E3DB21ABDB0900E4C3A6 /* AppDelegate.swift in Sources */,
+				19D9E14121B0CE0A006592DA /* RequestActivityPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,7 +558,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FRCYRL9TJE;
+				DEVELOPMENT_TEAM = 3PHL3Y9U2S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -582,7 +582,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FRCYRL9TJE;
+				DEVELOPMENT_TEAM = 3PHL3Y9U2S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
