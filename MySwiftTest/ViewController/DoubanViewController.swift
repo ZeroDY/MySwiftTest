@@ -147,7 +147,7 @@ class DoubanViewController: RootViewController, UITableViewDelegate, UITableView
     func requestListData() {
         //使用我们的provider进行网络请求（获取频道列表数据）
         let DouBanProvider = MoyaProvider<DouBan>(plugins: [
-            RequestAlertPlugin(viewController: self)
+            RequestActivityPlugin(view: self.view)
             ])
         DouBanProvider.request(.channels) { result in
             

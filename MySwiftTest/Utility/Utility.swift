@@ -18,7 +18,7 @@ func dPrint<T>(_ message: T,
     let now = Date()
     let dformatter = DateFormatter()
     dformatter.dateFormat = "MM-dd HH:mm:ss.SSS"
-    print("✅ \(dformatter.string(from: now)) ⇨ \((file as NSString).lastPathComponent)[\(line)] ⇨ \(method):\n \(message)")
+    print("ℹ️ \(dformatter.string(from: now)) ⇨ \((file as NSString).lastPathComponent) -> [\(line)] ⇨ \(method):\n \(message)")
     #endif
 }
 
